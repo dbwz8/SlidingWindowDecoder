@@ -140,7 +140,7 @@ cdef class bp4_osd:
         self.bp_iteration = 0
 
     cdef void osd_e_setup(self):
-        encoding_input_count = long(2 ** self.osd_order)
+        encoding_input_count = int(2 ** self.osd_order)
         self.encoding_input_count_x = encoding_input_count
         self.encoding_input_count_z = encoding_input_count
         self.osdw_encoding_inputs_x = <char**>calloc(encoding_input_count, sizeof(char*))

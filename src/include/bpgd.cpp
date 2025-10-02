@@ -421,9 +421,11 @@ void set_affinity(std::thread& th, int core_id) {
     CPU_ZERO(&cpuset);
     CPU_SET(core_id, &cpuset);
     int rc = pthread_setaffinity_np(th.native_handle(), sizeof(cpu_set_t), &cpuset);
+    /*###DBW: ignore error
     if (rc != 0) {
         std::cerr << "Error setting thread affinity: " << rc << std::endl;
     }
+    */
 }
 
 BPGD_tree_thread::BPGD_tree_thread(int m, int n, int num_iter, int max_tree_depth, int max_step, int low_error_mode, double factor): 

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=74.1","cython","numpy<2","pybind11"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "SlidingWindowDecoder"
+version = "0.0.0"
+dependencies = [
+    "numpy",
+]
+authors = [
+    { name = "Dave Wecker", email = "wecker@ionq.co" },
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
